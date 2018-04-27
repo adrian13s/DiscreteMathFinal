@@ -1,0 +1,2 @@
+# DiscreteMathFinal
+Prims and Kruskals 
