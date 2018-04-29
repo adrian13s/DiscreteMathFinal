@@ -19,31 +19,25 @@ def Prims(Graph):
     ET = [] #ET is min edge
     Tree = (VT, ET) #MST
     
-    
     edges = P.incident_edges(G,Tree)
     valid_edges = P.valid_incident_edges(G,Tree)#
     min_edge = P.min_valid_incident_edge(G,Tree)#
     new_vertices = {min_edge[0], min_edge[1]}
     cost_min_edge=P.cost(G,P.min_valid_incident_edge(G,Tree))
     
-    ET.append(min_edge)
-    Tree =[new_vertices.union(Tree[0]),ET]
-       
-    #print (Tree[0])
-    #print (Tree[1])
-    
-    
-    
-    
-    #print("Edges at vertex",VT,":",edges)
-    #print("Min edge at vertex",VT,":",new_vertices.union(Tree[0]), ET)
-    print("MSTree:",Tree)
-    
-    """Prims alg
+    """Prims alg"""
+    x=0
     while Tree[0] != V:
-        Tree=min_edge
+        x+=1
+        print('Iteration :',x)
+        min_edge = P.min_valid_incident_edge(G,Tree)#
+        new_vertices = {min_edge[0], min_edge[1]}
+        ET.append(min_edge)
+        Tree =[new_vertices.union(Tree[0]),ET]
         print(Tree)
-     """   
+    total_cost =0
+    for e in Tree[0]:
+        total_cost += cost_min_edge
+    print ("The total cost of the MST is:",total_cost)
         
         
-Prims(G)
