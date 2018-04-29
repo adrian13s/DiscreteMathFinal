@@ -1,2 +1,5 @@
 # DiscreteMathFinal
-Prims and Kruskals 
+
+Prims
+
+Adrian Saenz
