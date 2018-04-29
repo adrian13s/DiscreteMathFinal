@@ -27,7 +27,7 @@ def Prims(Graph):
     cost_min_edge=P.cost(G,P.min_valid_incident_edge(G,Tree))
     
     ET.append(min_edge)
-    #Tree =[new_vertices.union(Tree[0]),ET]
+    Tree =[new_vertices.union(Tree[0]),ET]
        
     #print (Tree[0])
     #print (Tree[1])
