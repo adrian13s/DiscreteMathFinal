@@ -10,11 +10,8 @@ from Prims import Prims
 from Prims_functions import G
 
 
-V = G.vertex_set()
-E = G.edge_set()
+InitialVertex = int(input("What is your initial vertex of these vertices?:"))
+ShowIterations = input("Do want to see the iterations(y/n)?:")
 
-Initial_Vertex = int(input('Enter the vertex where you wish to begin: '))
-Show_Iterations = eval(input('Do want to see the iterations (y/n)?: '))
-
-Prims(G,Initial_Vertex,Show_Iterations, Show_Cost)
+Prims(G,InitialVertex,ShowIterations)
 
