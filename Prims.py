@@ -50,3 +50,7 @@ def Prims(Graph,InitialVertex,ShowIterations):
         for e in Tree[0]:
             total_cost += cost_min_edge
         print ("The total cost of the MST is:",total_cost)
+        
+    print("")   
+    print ("This is a graph of the MST:")
+    G.draw_subgraph(Tree)
