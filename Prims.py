@@ -2,7 +2,7 @@
 #
 #
 
-from prims_functions import cost, min_valid_incident_edge, initial_tree,G
+from prims_functions import G
 import prims_functions as P
 
 
@@ -16,8 +16,7 @@ def Prims(Graph,InitialVertex,ShowIterations):
     ET = [] #ET is min edge
     Tree = (VT, ET) #MST
     
-    edges = P.incident_edges(G,Tree)
-    valid_edges = P.valid_incident_edges(G,Tree)#
+    
     min_edge = P.min_valid_incident_edge(G,Tree)#
     new_vertices = {min_edge[0], min_edge[1]}
     cost_min_edge=P.cost(G,P.min_valid_incident_edge(G,Tree))
@@ -34,7 +33,7 @@ def Prims(Graph,InitialVertex,ShowIterations):
             Tree =[new_vertices.union(Tree[0]),ET]
             print("MST:",Tree)
             print("")
-            total_cost =0
+        total_cost =0
         for e in Tree[0]:
             total_cost += cost_min_edge
         print ("The total cost of the MST is:",total_cost)
@@ -51,4 +50,3 @@ def Prims(Graph,InitialVertex,ShowIterations):
         for e in Tree[0]:
             total_cost += cost_min_edge
         print ("The total cost of the MST is:",total_cost)
-        
