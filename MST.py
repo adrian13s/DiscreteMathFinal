@@ -2,12 +2,11 @@
 #Estefany Lemus
 #
 
-from Prims import Prims
+from prims import Prims
 from prims_functions import G
 
-V = G.vertex_set()
-E = G.edge_set()
-InitialVertex = int(input("What is your initial vertex of these vertices?:"))
-ShowIterations = input("Do want to see the iterations(y/n)?:")
-print("")#extra space
+
+InitialVertex = int(input("Enter the vertex where you wish to begin? "))
+ShowIterations = input("Would you like to see the iterated path (y/n) ? ")
+
 Prims(G,InitialVertex,ShowIterations)
