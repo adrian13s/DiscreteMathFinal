@@ -2,7 +2,6 @@
 # -*- coding: utf-8 -*-
 """
 Created on Thu Apr 19 16:42:36 2018
-
 @author: randydavila
 """
 
@@ -10,10 +9,8 @@ Created on Thu Apr 19 16:42:36 2018
 # -*- coding: utf-8 -*-
 """
 Created on Tue Nov 14 20:36:37 2017
-
 author: Randy R. Davila
 course: MATH 2305 - Discrete Mathematical Structures
-
 In this python script we define a simple and weighted graph class object. This
 object should be used to write Prim's and Kruskal's algorithms.
 """
@@ -83,9 +80,9 @@ class Weighted_Graph(object):
         v1 =[v for v in H[0]]
         pos=nx.spring_layout(G) # positions for all nodes
         nx.draw_networkx_nodes(G,pos,node_size=250) # nodes
-        nx.draw_networkx_nodes(G,pos, nodelist = v1,node_size=400)
+        nx.draw_networkx_nodes(G,pos, nodelist = v1,node_size=400,node_color='b')
         nx.draw_networkx_edges(G,pos,edgelist=e1,width=1) # edges
-        nx.draw_networkx_edges(G,pos,edgelist=e2, color = 'red' ,width=5)
+        nx.draw_networkx_edges(G,pos,edgelist=e2,edge_color ='b' ,width=5)
 
         # labels
         labels = nx.get_edge_attributes(G,'weight')
