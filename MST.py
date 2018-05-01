@@ -1,5 +1,5 @@
 #Adrian Saenz
-#
+#Estefany Lemus
 #
 
 from Prims import Prims
