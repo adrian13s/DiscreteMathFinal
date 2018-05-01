@@ -16,10 +16,6 @@ G.draw_graph()
 def cost(G, e):
     return G.edge_dict()[e]
 
-#This functiion initializes a tree with initial vertex as parameter
-def initial_tree(initial_vertex):
-    return ({initial_vertex}, [])
-
 #intial_tree as a parameter
 #incident edges to parameter
 def incident_edges(G, T):
