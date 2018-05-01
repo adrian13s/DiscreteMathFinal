@@ -2,5 +2,5 @@
 
 Prims
 
-Adrian Saenz:
-Estefany Lemus
+Adrian Saenz
+ Estefany Lemus
