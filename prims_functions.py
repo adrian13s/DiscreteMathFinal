@@ -1,10 +1,3 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-Created on Thu Apr 26 13:49:21 2018
-
-@author: eslemus
-"""
 import Weighted_Graph as wg
 
 G = wg.Weighted_Graph("test.txt")
