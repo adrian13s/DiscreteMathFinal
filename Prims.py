@@ -8,10 +8,10 @@ import prims_functions as P
 
 V = G.vertex_set()
 
-def Prims(Graph,InitialVertex,ShowIterations):
+def Prims(Graph,Initial_Vertex,Show_Iteration):
     
     
-    VT = {InitialVertex} 
+    VT = {Initial_Vertex} 
     ET = [] 
     Tree = (VT, ET) 
     
@@ -19,9 +19,9 @@ def Prims(Graph,InitialVertex,ShowIterations):
     new_vertex = {min_edge[0], min_edge[1]}
     cost_min_edge=P.cost(G,P.min_valid_incident_edge(G,Tree))
     
-    """Prims algorithm"""
+   
     # w iterations
-    if ShowIterations == "y":
+    if Show_Iteration == "yes":
         x=0
         while Tree[0] != V:
             x+=1
@@ -38,7 +38,7 @@ def Prims(Graph,InitialVertex,ShowIterations):
         print ("The total cost of the MST is:",total_cost)
         
     # w/o iterations
-    elif ShowIterations == "n":
+    elif Show_Iteration == "no":
         while Tree[0] != V:
             min_edge = P.min_valid_incident_edge(G,Tree)
             new_vertex = {min_edge[0], min_edge[1]}
@@ -50,8 +50,8 @@ def Prims(Graph,InitialVertex,ShowIterations):
         
         for e in Tree[0]:
             total_cost += cost_min_edge
-        print ("The total cost of the MST is:",total_cost)
+        print ("Total cost of MST:", total_cost)
         
     print("")   
-    print ("Minimum Spanning Tree Graph:")
+    print ("Minimum Spanning Tree SubGraph:")
     G.draw_subgraph(Tree)
