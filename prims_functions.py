@@ -11,8 +11,6 @@ G = wg.Weighted_Graph("test.txt")
 
 G.draw_graph()
 
-
-#This function determines cost of edges between two vertices
 def cost(G, e):
     return G.edge_dict()[e]
 
@@ -26,7 +24,7 @@ def incident_edges(G, T):
                 edges.append(e)
     return [e for e in edges if e not in T[1]]
 
-#Functions avoids the graph being cyclical
+#Function avoids the graph being cyclical
 def valid_incident_edges(G, T):
     edges = []
     for e in incident_edges(G,T):
@@ -34,7 +32,7 @@ def valid_incident_edges(G, T):
             edges.append(e)  
     return edges
 
-#Chooses the min cost edge
+#Chooses min cost edge
 def min_valid_incident_edge(G, T):
     valid_edges = valid_incident_edges(G, T)
     min_edge = valid_edges[0]
