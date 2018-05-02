@@ -3,7 +3,7 @@
 """
 Estefany Lemus
 Adrian Saenz
-
+Ary Hernandez
 """
 import Weighted_Graph as wg
 
@@ -24,7 +24,7 @@ def incident_edges(G, T):
                 edges.append(e)
     return [e for e in edges if e not in T[1]]
 
-#Function avoids the graph being cyclical
+#Functions avoids the graph being cyclical
 def valid_incident_edges(G, T):
     edges = []
     for e in incident_edges(G,T):
@@ -32,7 +32,7 @@ def valid_incident_edges(G, T):
             edges.append(e)  
     return edges
 
-#Chooses min cost edge
+#Chooses the min cost edge
 def min_valid_incident_edge(G, T):
     valid_edges = valid_incident_edges(G, T)
     min_edge = valid_edges[0]
