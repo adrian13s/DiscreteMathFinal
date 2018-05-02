@@ -1,6 +1,6 @@
 #Adrian Saenz
 #Estefany Lemus
-#
+#Ary Hernandez
 
 from prims_functions import G
 import prims_functions as P
@@ -10,48 +10,47 @@ V = G.vertex_set()
 
 def Prims(Graph,Initial_Vertex,Show_Iteration):
     
-    
+    #initilization, tuples
     VT = {Initial_Vertex} 
     ET = [] 
-    Tree = (VT, ET) 
+    MST = (VT, ET) 
     
-    min_edge = P.min_valid_incident_edge(G,Tree)
-    new_vertex = {min_edge[0], min_edge[1]}
-    cost_min_edge=P.cost(G,P.min_valid_incident_edge(G,Tree))
+    cost_min_edge=P.cost(G,P.min_valid_incident_edge(G,MST))
     
-   
-    # w iterations
-    if Show_Iteration == "yes":
+    '''PRIMS ALGORITHM'''
+    # w/ iterations
+    if Show_Iteration == 'yes':
         x=0
-        while Tree[0] != V:
+        while MST[0] != V:
             x+=1
             print('Iteration :',x)
-            min_edge = P.min_valid_incident_edge(G,Tree)#
+            min_edge = P.min_valid_incident_edge(G,MST)
             new_vertex = {min_edge[0], min_edge[1]}
+            
             ET.append(min_edge)
-            Tree =[new_vertex.union(Tree[0]),ET]
-            print("MST:",Tree)
-            print("")
+            MST =[new_vertex.union(MST[0]),ET]
+            print('MST:',MST , '\n ')
+           
         total_cost =0
-        for e in Tree[0]:
+        for e in MST[0]:
             total_cost += cost_min_edge
-        print ("The total cost of the MST is:",total_cost)
+        print ('\n', 'The total cost of the MST is:',total_cost, '\n')
         
     # w/o iterations
-    elif Show_Iteration == "no":
-        while Tree[0] != V:
-            min_edge = P.min_valid_incident_edge(G,Tree)
+    elif Show_Iteration == 'no':
+        while MST[0] != V:
+            min_edge = P.min_valid_incident_edge(G,MST)
             new_vertex = {min_edge[0], min_edge[1]}
+            
             ET.append(min_edge)
-            Tree =[new_vertex.union(Tree[0]),ET]
-        print("MST:",Tree)
-        print("")
+            MST =[new_vertex.union(MST[0]),ET]
+        print('MST:',MST, '\n')
+       
         total_cost =0
-        
-        for e in Tree[0]:
+        for e in MST[0]:
             total_cost += cost_min_edge
-        print ("Total cost of MST:", total_cost)
+        print ('\n', 'Total cost of MST:', total_cost, '\n')
         
-    print("")   
-    print ("Minimum Spanning Tree SubGraph:")
-    G.draw_subgraph(Tree)
+       
+    print ('Minimum Spanning Tree SubGraph:')
+    G.draw_subgraph(MST)
