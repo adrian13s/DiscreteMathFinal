@@ -2,7 +2,7 @@
 #Estefany Lemus
 #Ary Hernandez
 
-from prims import Prims
+from Prims import Prims
 from prims_functions import G
 
 
