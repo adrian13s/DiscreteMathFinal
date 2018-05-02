@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Created on Thu Apr 26 13:49:21 2018
-
-@author: eslemus
+Estefany Lemus
+Adrian Saenz
+Ary Hernandez
 """
 import Weighted_Graph as wg
 
@@ -11,16 +11,10 @@ G = wg.Weighted_Graph("test.txt")
 
 G.draw_graph()
 
-
-#This function determines cost of edges between two vertices
 def cost(G, e):
     return G.edge_dict()[e]
 
-#This functiion initializes a tree with initial vertex as parameter
-def initial_tree(initial_vertex):
-    return ({initial_vertex}, [])
-
-#intial_tree as a parameter
+#initialization
 #incident edges to parameter
 def incident_edges(G, T):
     edges = []
